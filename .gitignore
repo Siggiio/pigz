@@ -1,0 +1,5 @@
+*.o
+pigz
+unpigz
+
+.DS_Store
