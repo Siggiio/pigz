@@ -1,4 +1,4 @@
-.TH PIGZ 1 "December 26, 2017"
+.TH PIGZ 1 "February 6, 2021"
 .SH NAME
 pigz, unpigz \- compress or expand files
 .SH SYNOPSIS
@@ -127,11 +127,17 @@ using the zopfli algorithm by Jyrki Alakuijala.
 The default is
 .B \-6.
 .TP
+.B -A --alias xxx
+Use xxx as the name for any --zip entry from stdin (the default name is "-").
+.TP
 .B -b --blocksize mmm
 Set compression block size to mmmK (default 128KiB).
 .TP
 .B -c --stdout --to-stdout
 Write all processed output to stdout (won't delete).
+.TP
+.B -C --comment ccc
+Include the provided comment in the gzip header or zip central file header.
 .TP
 .B -d --decompress --uncompress
 Decompress the compressed input.
@@ -141,6 +147,9 @@ Force overwrite, compress .gz, links, and to terminal.
 .TP
 .B -h --help
 Display a help screen and quit.
+.TP
+.B -H --huffman
+Compress using the Huffman-only strategy.
 .TP
 .B -i --independent
 Compress blocks independently for damage recovery.
@@ -198,6 +207,9 @@ Use suffix .sss instead of .gz (for compression).
 .B -t --test
 Test the integrity of the compressed input.
 .TP
+.B -U --rle
+Compress using the run length encoding strategy.
+.TP
 .B -v --verbose
 Provide more verbose output.
 .TP
@@ -228,4 +240,4 @@ This software is provided 'as-is', without any express or implied
 warranty.  In no event will the author be held liable for any damages
 arising from the use of this software.
 .PP
-Copyright (C) 2007-2017 Mark Adler <madler@alumni.caltech.edu>
+Copyright (C) 2007-2021 Mark Adler <madler@alumni.caltech.edu>
